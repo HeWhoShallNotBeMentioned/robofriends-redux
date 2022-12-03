@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import CardList from './CardList';
-import SearchBox from './SearchBox';
-import Scroll from './Scroll';
+import CardList from '../components/CardList';
+import SearchBox from '../components/SearchBox';
+import Scroll from '../components/Scroll';
 import './App.css';
 
 class App extends Component {
@@ -12,7 +12,6 @@ class App extends Component {
 
   async componentDidMount() {
     const response = await fetch('https://jsonplaceholder.typicode.com/users');
-    //console.log('response----', await response.json());
     const users = await response.json();
     this.setState({ robots: users });
   }
@@ -28,7 +27,7 @@ class App extends Component {
         .includes(this.state.searchfield.toLowerCase());
     });
 
-    if (this.state.robots.length === 0) {
+    if (!this.state.robots.length) {
       return <h1>Loading...</h1>;
     } else {
       return (

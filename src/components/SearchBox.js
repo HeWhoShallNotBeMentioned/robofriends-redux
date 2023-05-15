@@ -3,6 +3,8 @@ import React from 'react';
 const SearchBox = (props) => {
   const { searchChange } = props;
 
+  console.log('SearchBox component');
+
   return (
     <div className="pa2">
       <input

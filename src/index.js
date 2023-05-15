@@ -20,7 +20,7 @@ const logger = createLogger();
 const store = createStore(
   rootReducer,
   compose(
-    applyMiddleware(thunkMiddleware, logger),
+    applyMiddleware(thunkMiddleware), //, logger
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );

@@ -5,6 +5,7 @@ const CardList = (props) => {
   const { robots } = props;
 
   const cardComponent = robots.map((user, i) => {
+    console.log('CardList component');
     return (
       <Card
         id={robots[i].id}
